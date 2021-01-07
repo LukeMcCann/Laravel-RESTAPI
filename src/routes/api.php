@@ -17,4 +17,9 @@ use App\Http\Controllers\StudentController;
 
 Route::group(['prefix' => 'students'], function () {
     Route::get('/', [StudentController::class, 'index']);
+    Route::get('/{id}', [StudentController::class, 'show']);
+    Route::post('/', [StudentController::class, 'create']);
+    Route::delete('/{id}', [StudentController::class, 'delete']);
+    Route::post('/{id}', [StudentController::class, 'replace']);
+    Route::patch('/{id}', [StudentController::class, 'update']);
 });
